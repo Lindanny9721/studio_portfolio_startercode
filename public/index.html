@@ -8,11 +8,50 @@
 -->
 
 <!DOCTYPE html>
-<head>   
+    <head>
+        <script src="https://code.jquery.com/jquery.min.js"></script>   
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+    <div class="row">
+       <div class="col-md-3"><h1>Daniel Lin </h1></div>
+            <div class="col-md-9">
+                  <div style="float: right;">
+                        <button type="Portfolio" class="btn btn-default btn-lg">Portfolio</button>
+                        <button type="About Me" class="btn btn-default btn-lg">About Me</button>
+                        <button type="Contact" class="btn btn-default btn-lg">Contact</button>    
+        </div>
+        </div>
+                         </div>
+        <div style="text-align: center;">
+            <img src = https://i.ytimg.com/vi/8tPnX7OPo0Q/maxresdefault.jpg alt = "ERROR" style= "width:250px;height:250px;" class="img-circle">
+            <!--<img class = img-circle src = https://i.ytimg.com/vi/8tPnX7OPo0Q/maxresdefault.jpg alt = "ERROR" style= "width:250px;height:250px;">-->
+            <h2>About Me</h2>
+            <h6>Hello, My name is Daniel Lin and I go to High School for Environmental Studies. I am a junior and have been learning coding for at least 2 years, some languages I have learned is javascript,css, and html. I have made many small projects before (listed down below).</h6>
+        </div>    
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBB9UQPDwoChP4N2vvI-5FO8QuTmVEY7l8",
+    authDomain: "my-portfolio-a4d42.firebaseapp.com",
+    databaseURL: "https://my-portfolio-a4d42.firebaseio.com",
+    projectId: "my-portfolio-a4d42",
+    storageBucket: "my-portfolio-a4d42.appspot.com",
+    messagingSenderId: "837430547289"
+  };
+  firebase.initializeApp(config);
+var database = firebase.database();
+var projects_ref = database.ref('/projects');
+console.log('look for projects');
+projects_ref.once('value', function(snapshot) {
+	var projects = snapshot.val();
+	console.log('here are projects:');
+	console.log(projects);
+});
 
-</head>
-
-<body>
+</script>
     <!-- Nav Bar -->
     
     
